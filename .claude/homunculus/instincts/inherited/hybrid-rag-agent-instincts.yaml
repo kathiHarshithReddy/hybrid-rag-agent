@@ -1,0 +1,437 @@
+# Instincts generated from https://github.com/kathiHarshithReddy/hybrid-rag-agent
+# Generated: 2026-06-12T09:37:16.705Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: hybrid-rag-agent-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Commit Length
+
+## Action
+
+Keep commit messages concise (~25 characters)
+
+## Evidence
+
+- Average commit message length: 25 chars
+- Based on 2 commits
+
+---
+id: hybrid-rag-agent-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: hybrid-rag-agent-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: hybrid-rag-agent-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Export Style
+
+## Action
+
+Prefer mixed exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: mixed
+
+---
+id: hybrid-rag-agent-arch-type-based
+trigger: "when adding new code"
+confidence: 0.8
+domain: architecture
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Arch Type Based
+
+## Action
+
+Place code in the appropriate type folder (components/, services/, utils/, etc.)
+
+## Evidence
+
+- Type-based module organization detected
+- Folders: components, utils
+
+---
+id: hybrid-rag-agent-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: hybrid-rag-agent-test-framework
+trigger: "when writing tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Test Framework
+
+## Action
+
+Use vitest as the test framework
+
+## Evidence
+
+- Test framework detected: vitest
+- File pattern: *.test.js
+
+---
+id: hybrid-rag-agent-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.js
+
+## Evidence
+
+- File pattern: *.test.js
+- Consistent across test files
+
+---
+id: hybrid-rag-agent-test-types
+trigger: "when planning tests for a feature"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Test Types
+
+## Action
+
+Write unit, integration tests to match project standards
+
+## Evidence
+
+- Test types detected: unit, integration
+- Coverage config: no
+
+---
+id: hybrid-rag-agent-instinct-file-naming
+trigger: "When creating a new file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct File Naming
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files
+- src/components and src/utils file names
+
+---
+id: hybrid-rag-agent-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: hybrid-rag-agent-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: hybrid-rag-agent-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: hybrid-rag-agent-instinct-import-style
+trigger: "When importing modules"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Import Style
+
+## Action
+
+Use relative import paths
+
+## Evidence
+
+- Pattern in importStyle
+- Seen in src/components/*
+
+---
+id: hybrid-rag-agent-instinct-export-style
+trigger: "When exporting modules or functions"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Export Style
+
+## Action
+
+Use both default and named exports as appropriate
+
+## Evidence
+
+- Pattern in exportStyle: mixed
+
+---
+id: hybrid-rag-agent-instinct-test-location
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Test Location
+
+## Action
+
+Place test files in the separate tests folder
+
+## Evidence
+
+- Pattern in architecture.testLocation
+- Presence of tests/ folder
+
+---
+id: hybrid-rag-agent-instinct-test-naming
+trigger: "When naming a test file"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Test Naming
+
+## Action
+
+Use the *.test.js pattern
+
+## Evidence
+
+- Pattern in testing.filePattern
+
+---
+id: hybrid-rag-agent-instinct-test-framework
+trigger: "When writing new tests"
+confidence: 0.9
+domain: testing
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Test Framework
+
+## Action
+
+Use the vitest testing framework
+
+## Evidence
+
+- Pattern in testing.framework
+
+---
+id: hybrid-rag-agent-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Test Type
+
+## Action
+
+Include both unit and integration tests as needed
+
+## Evidence
+
+- Pattern in testing.testTypes
+
+---
+id: hybrid-rag-agent-instinct-commit-message-style
+trigger: "When making a git commit"
+confidence: 0.8
+domain: git
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Commit Message Style
+
+## Action
+
+Write a short, freeform commit message without a prefix
+
+## Evidence
+
+- Pattern in commits.type: freeform
+- Examples: 'Initial plan', 'Build full hybrid RAG project scaffold'
+
+---
+id: hybrid-rag-agent-instinct-commit-length
+trigger: "When composing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Commit Length
+
+## Action
+
+Keep the commit message concise (around 25 characters on average)
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: hybrid-rag-agent-instinct-error-handling
+trigger: "When handling errors in code"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: kathiHarshithReddy/hybrid-rag-agent
+---
+
+# Hybrid Rag Agent Instinct Error Handling
+
+## Action
+
+Use try-catch blocks for error handling
+
+## Evidence
+
+- Pattern in errorHandling.style: try-catch
+
