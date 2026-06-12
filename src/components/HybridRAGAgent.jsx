@@ -9,6 +9,15 @@ const initialDocs = [
   },
 ];
 
+function createMessage(role, content, meta) {
+  return {
+    id: `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+    role,
+    content,
+    meta,
+  };
+}
+
 export default function HybridRAGAgent() {
   const [docs, setDocs] = useState(initialDocs);
   const [messages, setMessages] = useState([]);
@@ -46,7 +55,7 @@ export default function HybridRAGAgent() {
     const question = input.trim();
     if (!question || loading || indexing) return;
 
-    setMessages((prev) => [...prev, { role: 'user', content: question }]);
+    setMessages((prev) => [...prev, createMessage('user', question)]);
     setInput('');
     setLoading(true);
 
@@ -60,12 +69,12 @@ export default function HybridRAGAgent() {
 
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: data.answer ?? 'No response available.', meta: data.source },
+        createMessage('assistant', data.answer ?? 'No response available.', data.source),
       ]);
     } catch (error) {
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: `Error: ${error.message}`, meta: { type: 'error' } },
+        createMessage('assistant', `Error: ${error.message}`, { type: 'error' }),
       ]);
     } finally {
       setLoading(false);
@@ -121,8 +130,8 @@ export default function HybridRAGAgent() {
         <div className="rounded-lg border bg-white p-4">
           <h2 className="mb-3 text-lg font-medium">Chat</h2>
           <div className="h-72 overflow-y-auto rounded border bg-slate-50 p-2">
-            {messages.map((message, idx) => (
-              <ChatMessage key={`${message.role}-${idx}`} message={message} />
+            {messages.map((message) => (
+              <ChatMessage key={message.id} message={message} />
             ))}
             {loading ? <p className="text-xs text-slate-500">Thinking...</p> : null}
             <div ref={bottomRef} />
