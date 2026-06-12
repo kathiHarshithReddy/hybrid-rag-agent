@@ -3,7 +3,7 @@ import { chunkText } from '../../src/utils/chunking';
 
 describe('chunkText', () => {
   it('returns sentence-aware chunks', () => {
-    const chunks = chunkText('One short sentence. Two short sentence. Three short sentence.', {
+    const chunks = chunkText('One short sentence. Two short sentences. Three short sentences.', {
       maxWords: 4,
       overlapWords: 1,
     });
